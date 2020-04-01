@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import logo from '~/assets/logo.svg';
-import { singInRequest } from '~/store/modules/auth/actions';
+import { signInRequest } from '~/store/modules/auth/actions';
 
 const schema = Yup.object().shape({
 	email: Yup.string()
@@ -19,7 +19,7 @@ export default function SignIn() {
 	const loading = useSelector(state => state.auth.loading);
 
 	function handleSubmit({ email, password }) {
-		dispatch(singInRequest(email, password));
+		dispatch(signInRequest(email, password));
 	}
 
 	return (
